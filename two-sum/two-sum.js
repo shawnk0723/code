@@ -29,3 +29,5 @@ var twoSum = function(nums, target){
     }
     
 }
+//time O(n)
+//space O(n)
