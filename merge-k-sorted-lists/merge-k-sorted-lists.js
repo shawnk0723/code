@@ -10,12 +10,10 @@
  * @return {ListNode}
  */
 
-var mergeKLists = function(lists) {
-    if (lists.length === 0){
-        return null;
-    }
-    while (lists.length > 1){
-        
+var mergeKLists = function(lists){
+    if (lists.length === 0)return null;
+    
+    while (lists.length > 1) {
         let a = lists.shift();
         let b = lists.shift();
         let merged = merge(a,b);
@@ -24,24 +22,24 @@ var mergeKLists = function(lists) {
     return lists[0];
 }
 
-var merge = function(a, b) {
-    let dummy = new ListNode(0);
+var merge = function(l1, l2){
+    let dummy = new ListNode();
     let tail = dummy;
     
-    while (a&&b) {
-        if (a.val < b.val) {
-            tail.next = a;
-            a = a.next;
+    while (l1 && l2) {
+        if (l1.val < l2.val){
+            tail.next = l1;
+            l1 = l1.next;
         }else {
-            tail.next = b;
-            b = b.next;
+            tail.next = l2;
+            l2 = l2.next;
         }
         tail = tail.next;
     }
-    tail.next = a || b;
+    tail.next = l1 || l2;
     return dummy.next;
 }
-//time: O(nlogk)
-//space: O(n)
-//(n=num of nodes in a list)
-//(k=num of lists)
+//time O(nlogk)
+//space O(n)
+
+
