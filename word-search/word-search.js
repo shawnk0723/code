@@ -13,6 +13,7 @@ var exist = function(board, word) {
         board[r][c] = 0;
         if(dfs(r+1,c,i+1)||dfs(r-1,c,i+1)||dfs(r,c+1,i+1)||dfs(r,c-1,i+1))return true;
         board[r][c]=word[i];
+        
     }
     for(let r = 0; r < ROWS; r++){
         for(let c=0; c < COLS; c++){
