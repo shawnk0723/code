@@ -21,7 +21,6 @@ var numDecodings = function(s) {
         if(twoD >= 10 && twoD <= 26){
             dp[i] += dp[i-2];
         }
-        //console.log(oneD, twoD)
     }
     return dp[s.length]; 
     
