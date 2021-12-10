@@ -19,6 +19,7 @@ var maxPathSum = function(root){
         let right = Math.max(0, dfs(root.right))
         //with split
         max = Math.max(max, root.val + left + right)
+        // console.log(max)
         //without split
         return Math.max(left, right) + root.val
     }
