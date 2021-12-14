@@ -10,25 +10,28 @@
  * @return {ListNode}
  */
 //iterative
-// var reverseList = function(head) {
-//     let prev = null;
+
+var reverseList = function(head) {
+    let prev = null;
     
-//     while (head) {
-//         next = head.next;
-//         head.next = prev;
-//         prev = head;
-//         head = next;
-//     }
-//     return prev;
-// };
+    while (head) {
+        let next = head.next;
+        head.next = prev;
+        prev = head;
+        head = next;
+    }
+    return prev;
+}
+//time O(n)
+//space O(1)
 
 //recursive
-var reverseList = function(head, prev=null) {
-    if (!head) return prev;
-    let next = head.next;
-    head.next = prev;
-    return reverseList(next, head)
-}
+// var reverseList = function(head, prev=null) {
+//     if (!head) return prev;
+//     let next = head.next;
+//     head.next = prev;
+//     return reverseList(next, head)
+// }
 
 //time: O(n)
 //space: O(n)
