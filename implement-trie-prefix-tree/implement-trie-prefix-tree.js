@@ -1,46 +1,36 @@
 
 var Trie = function() {
     this.root = {};
-};
+}
 
-/** 
- * @param {string} word
- * @return {void}
- */
-Trie.prototype.insert = function(word) {
+Trie.prototype.insert = function(word){
     let cur = this.root;
     for (let c of word){
-        if(!cur[c]) cur[c] = {}
+        if(!cur[c]) cur[c] = {};
         cur = cur[c]
     }
-    cur.isEnd = true;   
+    cur.isEnd = true;
 };
 
-/** 
- * @param {string} word
- * @return {boolean}
- */
-Trie.prototype.search = function(word) {
+Trie.prototype.search = function(word){
     let cur = this.root;
     for (let c of word){
-        if(!cur[c])return false
+        if (!cur[c])return false;
         cur = cur[c]
     }
     return cur.isEnd === true;
-};
+}
 
-/** 
- * @param {string} prefix
- * @return {boolean}
- */
-Trie.prototype.startsWith = function(prefix) {
+Trie.prototype.startsWith = function(prefix){
     let cur = this.root;
     for (let c of prefix){
-        if(!cur[c])return false;
+        if (!cur[c])return false
         cur = cur[c]
     }
     return true;
-};
+}
+
+
 
 /** 
  * Your Trie object will be instantiated and called as such:
