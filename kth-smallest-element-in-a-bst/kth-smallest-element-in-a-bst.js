@@ -22,7 +22,10 @@ var kthSmallest = function(root, k) {
         if(node){
             traversal(node.left);
             k--;
-            if(k==0)target=node;
+            if(k==0){
+                target=node;
+                return;
+            }
             traversal(node.right);
         }
     }
