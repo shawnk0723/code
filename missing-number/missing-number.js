@@ -1,19 +1,18 @@
 /**
  * @param {number[]} nums
  * @return {number}
- */
-var missingNumber = function(nums) {
-    //edge
-    if (!nums || nums.length < 1) return null
+//  */
+var missingNumber = function(nums){
+    if (!nums || nums.length < 1) return null;
     
-    let arraySum = 0, indexSum = 0
+    let index = 0, sum = 0;
     
     for (let i = 0; i < nums.length; i++){
-        arraySum += nums[i];
-        indexSum += i+1
+        sum += nums[i];
+        index += 1+ i;
     }
-    return indexSum - arraySum;
-};
-//time: O(n)
-//space: O(1)
+    return index - sum;
+}
 
+//time O(n)
+//space O(1)
