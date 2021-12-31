@@ -8,6 +8,7 @@ var encode = function(strs) {
     let res = "";
     for (let s of strs){
         res += s.length.toString() + "#" + s
+        // console.log(res)
     }
     return res;
 };
@@ -24,6 +25,7 @@ var decode = function(s) {
         let j = i
         while (s[j] !=='#'){
             j+=1
+            // console.log(s[j])
         }
         let length = parseInt(s.slice(i,j))
         res.push(s.slice(j+1, j+1+length))
