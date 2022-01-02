@@ -1,49 +1,75 @@
-
-var MedianFinder = function() {
-    this.arr = []
-};
-
-/** 
- * @param {number} num
- * @return {void}
- */
-MedianFinder.prototype.addNum = function(num) {
-    if(this.arr.length===0){
-        this.arr.push(num);
-        return;
-    } 
-    
-    let l = 0, r = this.arr.length;
-    
-    //keep going till pointers meet
-    while(l<r){
-        const mid = Math.floor((l+r)/2);
-        //check if we can insert at mid
-        if(num > this.arr[mid]){
-            //search right half of array
-            l= mid+1;
-        }else{
-            //search left half of array
-            r=mid;
-        }
+class MedianFinder {
+    constructor() {
+        // set up array
+        this.arr = [];
     }
-    //insert at left pointer
-    this.arr.splice(l,0,num)
-};
+    
+    addNum(num) {
+        // check if array is size 0, just push
+        if (this.arr.size === 0){
+            arr.push(num);
+            return;
+        }
+        
+        // left and right pointers for binary search
+        let l = 0, r = this.arr.length -1;
+        
+        // keep going until pointers meet
+        while (l <= r) {
+            // get mid point
+            const mid = Math.floor((l + r) / 2);
+            // check if we can insert at mid
+            if (num > this.arr[mid]){
+                // search right half of array
+                l = mid+1;
+            } else {
+                // search left half of array
+                r = mid-1;
+            }
+        }
+        // we can insert at left pointer
+        this.arr.splice(l, 0, num)
+        
+    }
+    
+    findMedian() {
+        // if odd, return middle, if even, return avg of two middle
+        const mid = Math.floor(this.arr.length / 2);
+        return (this.arr.length % 2 === 0) ? (this.arr[mid] + this.arr[mid-1]) /2 : this.arr[mid];
+    }
+}
 
-/**
- * @return {number}
- */
-MedianFinder.prototype.findMedian = function() {
-    const mid = Math.floor(this.arr.length/2)
-    return (this.arr.length%2===0) ? (this.arr[mid-1]+this.arr[mid])/2 : this.arr[mid]
-};
+//time find:O(1), add: O(logn) if not taking splice into acc or O(n)
+//space O(n)
 
-//time O(nlog n) + O(1)binarySearch, splice..
 
-/** 
- * Your MedianFinder object will be instantiated and called as such:
- * var obj = new MedianFinder()
- * obj.addNum(num)
- * var param_2 = obj.findMedian()
- */ 
+
+//optimized using minHeap
+//time O(logn) + O(1)
+// class MedianFinder {
+// 	//Initilize max and min heap
+//     constructor() {
+//         this.minHeap = new MinPriorityQueue() //supported by leetcode
+//         this.maxHeap = new MaxPriorityQueue()
+//     }
+
+//     addNum(num) {
+// 	//add to min and pop the top for max to keep them in the order that we want
+//         this.minHeap.enqueue(num);
+//         this.maxHeap.enqueue(this.minHeap.dequeue().element);
+// 		//balance them
+//         if (this.minHeap.size() < this.maxHeap.size()) {
+//             this.minHeap.enqueue(this.maxHeap.dequeue().element);
+//         }
+// 		//console.log(this.minHeap.toArray(), this.maxHeap.toArray()) //run this to understand better
+//     }
+
+//     findMedian() {
+//         if (this.minHeap.size() > this.maxHeap.size()) // if one is bigger 21 and 345 example just pop from 345(min heap)
+//             return this.minHeap.front().element;
+//         else 
+//             return (this.minHeap.front().element + this.maxHeap.front().element) / 2; // 21 and 34 example, pop 1 and 3 and find average
+        
+//     }
+// }
+
