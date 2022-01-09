@@ -8,7 +8,7 @@ var longestPalindrome = function(s){
     let longest = "";
     
     for (let i = 0; i < s.length; i++){
-        let even = expendFromCenter(s, i+1, i);
+        let even = expendFromCenter(s, i-1, i);
         let odd = expendFromCenter(s, i, i);
         
         if (longest.length < even.length)longest = even;
