@@ -4,7 +4,7 @@
  */
 var maxSubArray = function(nums){
     let maxHere = 0;
-    let maxSofar = -Infinity;
+    let maxSofar = -Number.MAX_VALUE;
 ;
     
     for (let i = 0; i < nums.length;i++){
