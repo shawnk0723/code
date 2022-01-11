@@ -9,7 +9,7 @@ current = Math.max(current, 0) means that if the value was negative, then we thr
 */
 var maxSubArray = function(nums){
     let maxHere = 0;
-    let maxSofar = -Number.MAX_VALUE;
+    let maxSofar = nums[0];
 ;
     
     for (let i = 0; i < nums.length;i++){
