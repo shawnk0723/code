@@ -42,3 +42,5 @@ var twoSum = function(nums, target){
         map.set(nums[i], i);
     }
 }
+//time O(n)
+//space O(n)
