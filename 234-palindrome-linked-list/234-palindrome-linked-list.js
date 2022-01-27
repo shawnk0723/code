@@ -42,5 +42,7 @@ var reverse = function(head) {
     return prev
 }
 
+
+
 //time: O(n)
 //space: O(1)
