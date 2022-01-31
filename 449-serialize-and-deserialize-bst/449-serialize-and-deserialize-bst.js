@@ -24,6 +24,7 @@ function serialize(root, result = []){
     return result;
 } 
 
+
 function deserialize(data){
     let val = data.shift();
     if (val === null)return null;
