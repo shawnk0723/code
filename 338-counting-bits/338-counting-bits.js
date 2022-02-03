@@ -52,6 +52,7 @@ var countBits = function(num){
     return dp;
 }
 
+
 /* output of dp[i] 
 1 => 1
 1 => 2
