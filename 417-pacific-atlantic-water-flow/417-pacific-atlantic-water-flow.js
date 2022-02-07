@@ -96,6 +96,5 @@ var pacificAtlantic = function(heights) {
     }
     return res;
 }
-
 //time O(n*m)
 //space O(n*m)
