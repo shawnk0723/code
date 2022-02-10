@@ -22,7 +22,5 @@ var eraseOverlapIntervals = function(intervals){
     }
     return remove;
 }
-
-
 //time O(nlogn)
 //space O(1)
