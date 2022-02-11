@@ -26,6 +26,5 @@ var topKFrequent = function(nums, k) {
         if(result.length===k)return result;
     }
 };
-
 //time O(n)
 //space O(n)
