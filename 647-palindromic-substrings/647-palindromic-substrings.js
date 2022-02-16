@@ -21,7 +21,6 @@ var countSubstrings = function(s){
 }
 
 
-
 // var countSubstrings = function(s) {
 //     let cnt = 0;
 //     for (let i=0; i<s.length;i++){
