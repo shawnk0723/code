@@ -21,8 +21,6 @@
 //         if(s.val !== t.val)return false;
 //         return isEqual(s.left, t.left)&& isEqual(s.right, t.right)
 //     }
-
-
 //time O(n)
 //space O(1)
 
