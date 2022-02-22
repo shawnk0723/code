@@ -28,6 +28,23 @@ const kClosest = function(points, k) {
 };
 //Time Complexity: O(nlogk), n for points.length, k for input K
 
+//bc sorting takes nlogn, we improve it with minheap which is klogn
+// const kClosest = function(points, k){
+//     const res = [];
+//     const minheap = new MinHeap();//assuming it's given
+    
+//     for (let i=0; i<points.length;i++){
+//         const x = points[i][0];
+//         const y = points[i][1];
+//         const dist = (x**2) + (y**2);//we don't need sqroot bc we just need to know which one is greater
+//         minHeap.add([x,y], dist) //{element:[x,y], value: dist}
+//     }
+//     while(k>0){
+//         res.push(minHeap.dequeue().element);
+//         k -=1;
+//     }
+//     return res;
+// }
 
 //if heap is already given
 // let distance = ([x,y]) => Math.sqrt(x**2 + y**2);
