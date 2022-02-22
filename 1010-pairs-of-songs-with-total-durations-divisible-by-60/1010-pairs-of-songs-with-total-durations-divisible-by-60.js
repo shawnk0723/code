@@ -39,6 +39,7 @@ function numPairsDivisibleBy60(time) {
   for (const t of time) {
     const mod = t % 60; // <- current song
     const left = (60 - mod) % 60; // potential song	
+    // console.log(left, bucket[left],mod)
     count += bucket[left];
     bucket[mod]++;     // update bucket remainder
   }
