@@ -20,6 +20,7 @@ var wordBreak = function(s, wordDict) {
     return dp[0]
 };
 
+
 //time O(m*n^2)
 
 // var wordBreak = function(s, wordDict) {
