@@ -16,6 +16,8 @@ MedianFinder.prototype.addNum = function (num) {
   }
 };
 
+
+
 /**
  * @return {number}
  */
