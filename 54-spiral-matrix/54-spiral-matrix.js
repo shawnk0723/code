@@ -36,6 +36,5 @@ var spiralOrder = function(matrix){
     }
     return res;
 }
-
 //time O(m*n)
 //space O(m*n)
