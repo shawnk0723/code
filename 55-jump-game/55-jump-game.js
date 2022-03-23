@@ -13,5 +13,6 @@ var canJump = function(nums){
     }
     return goal === 0;
 }
+
 //time: O(n)
 //space: O(1)
