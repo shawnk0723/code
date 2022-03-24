@@ -33,6 +33,7 @@ var search = function(nums, target){
     return -1;
 }
 
+
 //time O(logn)
 //space O(1)
 
